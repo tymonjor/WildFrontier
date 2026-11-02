@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10251d" />
+    <meta name="description" content="Pierwszy grywalny szkic świata WildFrontier." />
+    <title>WildFrontier — Leśna dolina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="game" aria-label="WildFrontier — leśna dolina">
+      <div class="vignette" aria-hidden="true"></div>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="WildFrontier">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>WILD<span class="brand-light">FRONTIER</span></span>
+        </a>
+        <div class="world-status">
+          <span class="status-dot"></span>
+          <span>LEŚNA DOLINA</span>
+          <span class="status-divider">/</span>
+          <span id="clock">08:00</span>
+        </div>
+        <button class="sound-button" id="sound-toggle" type="button" aria-label="Włącz lub wyłącz dźwięk" title="Dźwięk wkrótce">♫</button>
+      </header>
+
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> TWOJA PRZYGODA ZACZYNA SIĘ TUTAJ</p>
+        <h1 id="intro-title">Tam, gdzie<br /><em>kończy się</em><br />droga.</h1>
+        <p class="intro-copy">Spokojny las. Nieznane ścieżki.<br />Wyrusz i zobacz, co kryje dolina.</p>
+        <button class="start-button" id="start-button" type="button">
+          <span>Rozpocznij wędrówkę</span><span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <div class="intro-foot"><span class="foot-icon">⌁</span> Bez pośpiechu. To dopiero początek.</div>
+      </section>
+
+      <aside class="side-note" id="side-note">
+        <span class="side-note-line"></span>
+        <span>ODDYCHAJ<br />I ROZGLĄDAJ SIĘ</span>
+      </aside>
+
+      <footer class="bottom-bar">
+        <div class="controls" id="controls">
+          <span class="control-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span>Ruch</span></span>
+          <span class="control-separator"></span>
+          <span class="control-hint"><span class="mouse-icon">⌖</span> <span>Przeciągnij, aby rozejrzeć się</span></span>
+        </div>
+        <div class="coordinates"><span class="coordinates-dot"></span><span id="coordinates">0, 0</span></div>
+      </footer>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <noscript>Do uruchomienia WildFrontier potrzebna jest obsługa JavaScript.</noscript>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
